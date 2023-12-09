@@ -2,7 +2,7 @@
 
 # Remove no subsucription message
 PROXMOXLIB="/usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js"
-sed -Ez "s/(Ext.Msg.show\(\{\s+title: gettext\('No valid sub)/void\(\{ \/\/\1/g" $PROXMOXLIB
+sed -Ezi "s/(Ext.Msg.show\(\{\s+title: gettext\('No valid sub)/void\(\{ \/\/\1/g" $PROXMOXLIB
 systemctl restart pveproxy.service
 
 # Replace proxmox enterprise repo
